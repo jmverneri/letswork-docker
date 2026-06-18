@@ -1,0 +1,6 @@
+# Ignorar las carpetas de los proyectos (porque ya tienen sus propios repositorios)
+/letsWork/
+/letswork-api/
+
+# Ignorar archivos sueltos del sistema de Mac
+.DS_Store
