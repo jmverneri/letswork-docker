@@ -23,6 +23,8 @@ services:
       - "8080:80"
     volumes:
       - ./letsWork:/var/www/html
+    env_file:
+      - .env
     command: sh -c "docker-php-ext-install pdo pdo_mysql && a2enmod rewrite && apache2-foreground"
     depends_on:
       - letswork_db
