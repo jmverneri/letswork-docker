@@ -4,3 +4,5 @@
 
 # Ignorar archivos sueltos del sistema de Mac
 .DS_Store
+
+.env
