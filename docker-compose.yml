@@ -23,7 +23,7 @@ services:
       - "8080:80"
     volumes:
       - ./letsWork:/var/www/html
-    command: sh -c "docker-php-ext-install pdo pdo_mysql && a2enmod rewrite && apache2-foreground"
+    command: sh -c "docker-php-ext-install pdo pdo_mysql && a2enmod rewrite && echo 'upload_max_filesize=10M' > /usr/local/etc/php/conf.d/uploads.ini && echo 'post_max_size=12M' >> /usr/local/etc/php/conf.d/uploads.ini && apache2-foreground"
     depends_on:
       - letswork_db
     environment:
@@ -34,6 +34,8 @@ services:
       - BASE_URL=http://localhost:8080/
       - TZ=America/Argentina/Buenos_Aires
       - API_URL=http://letswork_api:8000/
+      - API_KEY=${API_KEY}
+      - DEBUG=false
 
   # --- SERVICIO 3: TU API EN PYTHON (FASTAPI) ---
   api-python:
@@ -46,6 +48,8 @@ services:
       - ./letswork-api:/app
     working_dir: /app
     command: sh -c "pip install fastapi uvicorn requests && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    environment:
+      - API_KEY=${API_KEY}
 
 volumes:
   letswork_data:
