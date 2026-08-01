@@ -37,13 +37,14 @@ CREATE TABLE `job_positions` (
   `jobPositionId` int NOT NULL AUTO_INCREMENT,
   `careerId` int NOT NULL,
   `description` varchar(100) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`jobPositionId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `job_positions` WRITE;
 /*!40000 ALTER TABLE `job_positions` DISABLE KEYS */;
-INSERT INTO `job_positions` VALUES (1,1,'Supervisor de Planta de Procesamiento'),(2,1,'Analista de Control de Calidad Marina'),(3,1,'Inspector de Flota Pesquera'),(4,2,'Diseñador de Estructuras Navales'),(5,2,'Ingeniero de Mantenimiento de Astilleros'),(6,2,'Perito Naval'),(7,3,'Técnico en Gestión de Residuos Industriales'),(8,3,'Analista de Monitoreo de Impacto Ambiental'),(9,3,'Asesor en Normativas ISO 14001'),(10,4,'Controlador de Procesos de Tintorería'),(11,4,'Supervisor de Línea de Confección'),(12,4,'Analista de Hilandería y Tejeduría'),(13,5,'Asistente de Recursos Humanos'),(14,5,'Analista de Cuentas a Pagar'),(15,5,'Auxiliar administrativo contable'),(16,6,'Desarrollador Fullstack PHP'),(17,6,'Analista QA / Tester'),(18,6,'Junior Backend Developer'),(19,7,'Diseñador de Espacios Comerciales'),(20,7,'Asistente de Visual Merchandising'),(21,7,'Proyectista de Interiores Residenciales');
+INSERT INTO `job_positions` (jobPositionId, careerId, description) VALUES (1,1,'Supervisor de Planta de Procesamiento'),(2,1,'Analista de Control de Calidad Marina'),(3,1,'Inspector de Flota Pesquera'),(4,2,'Diseñador de Estructuras Navales'),(5,2,'Ingeniero de Mantenimiento de Astilleros'),(6,2,'Perito Naval'),(7,3,'Técnico en Gestión de Residuos Industriales'),(8,3,'Analista de Monitoreo de Impacto Ambiental'),(9,3,'Asesor en Normativas ISO 14001'),(10,4,'Controlador de Procesos de Tintorería'),(11,4,'Supervisor de Línea de Confección'),(12,4,'Analista de Hilandería y Tejeduría'),(13,5,'Asistente de Recursos Humanos'),(14,5,'Analista de Cuentas a Pagar'),(15,5,'Auxiliar administrativo contable'),(16,6,'Desarrollador Fullstack PHP'),(17,6,'Analista QA / Tester'),(18,6,'Junior Backend Developer'),(19,7,'Diseñador de Espacios Comerciales'),(20,7,'Asistente de Visual Merchandising'),(21,7,'Proyectista de Interiores Residenciales');
 /*!40000 ALTER TABLE `job_positions` ENABLE KEYS */;
 UNLOCK TABLES;
 
